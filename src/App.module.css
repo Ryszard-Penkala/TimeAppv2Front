@@ -1,0 +1,10 @@
+.App{
+    background: var(--color-background-primary);
+    height: 100vh;
+}
+.mainContainer{
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

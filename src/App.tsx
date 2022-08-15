@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import './App.css';
+import styles from './App.module.css'
+import {HeaderWrapper} from "./components/Wrappers/HeaderWrapper";
+import {LoginView} from "./views/LoginView/LoginView";
+import {SignInView} from "./views/SignUpView/SignInView";
+import {NotFoundView} from "./views/NotFoundView/NotFoundView";
+import {TimeReportView} from "./views/TimeReportView/TimeReportView";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.App}>
+            <HeaderWrapper/>
+            <div className={styles.mainContainer}>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/login"/>}/>
+                    <Route path="/login" element={<LoginView/>}/>
+                    <Route path="/signin" element={<SignInView/>}/>
+                    <Route path="/time-report" element={< TimeReportView />}/>
+                    <Route path="*" element={<NotFoundView/>}/>
+                </Routes>
+            </div>
+        </div>
+    );
 }
 
 export default App;
