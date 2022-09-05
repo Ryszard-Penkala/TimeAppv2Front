@@ -43,8 +43,8 @@ export const TimeReportTabView = () => {
                     Please choose which report would you like to see
                 </p>
                 <div className={styles.mainSectionButtons}>
-                    <Button children = "Current User report" link="/#"/>
-                    <Button children = "All User report" link="/#" />
+                    <Button children = "Current User Report" link="/#"/>
+                    <Button children = "All User Report" link="./all-users-report" />
                 </div>
             </section>
         </>
