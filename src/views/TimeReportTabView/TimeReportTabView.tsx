@@ -1,13 +1,12 @@
-import styles from './TimeReportView.module.scss';
+import styles from "./TimeReportTabView.module.scss"
 import {useEffect, useState} from "react";
-import {getAllUsersReportResponse} from 'types'
 import {Spinner} from "../../common/Spinner/Spinner";
-import { Button } from '../../components/Button/Button';
+import { getAllUsersReportResponse } from "types";
+import {Button} from "../../components/Button/Button";
 
-export const TimeReportView = () => {
+export const TimeReportTabView = () => {
 
     const [loadingData, setLoadingData] = useState< getAllUsersReportResponse | null>(null)
-
 
     const fetchData = async () => {
         setLoadingData(null);
@@ -21,7 +20,7 @@ export const TimeReportView = () => {
     useEffect(()=> {
         fetchData()
             .catch(console.error);
-        }, []);
+    }, []);
 
 
     if(loadingData === null) {
@@ -34,22 +33,21 @@ export const TimeReportView = () => {
         )
     }
 
-
-
     return  (
         <>
             <section className={styles.mainSectionGroup}>
                 <div className={styles.mainSectionHeader}>
-                    <h2>Welcome to the time registration application</h2>
+                    <h2>Welcome to the time record tab</h2>
                 </div>
                 <p className={styles.mainSectionParagraph}>
-                    Choose which action you would like to take
+                    Please choose which report would you like to see
                 </p>
                 <div className={styles.mainSectionButtons}>
-                    <Button children = "Time Registration Tab" link="/#"/>
-                    <Button children = "Time Report Tab" link="/time-report-tab" />
+                    <Button children = "Current User report" link="/#"/>
+                    <Button children = "All User report" link="/#" />
                 </div>
             </section>
         </>
     )
+
 }
