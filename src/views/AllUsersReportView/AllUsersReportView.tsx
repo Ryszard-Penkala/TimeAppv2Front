@@ -2,6 +2,7 @@ import styles from './AllUsersReportView.module.scss';
 import {useEffect, useState} from "react";
 import {Spinner} from "../../common/Spinner/Spinner";
 import {getAllUsersReportResponse} from 'types';
+import { AllTasksTable } from '../../components/AllTasksTable/AllTasksTable';
 
 export const AllUsersReportView = () => {
 
@@ -11,6 +12,7 @@ export const AllUsersReportView = () => {
     useEffect(() => {
 
         const fetchData = async () => {
+            setLoadingData(null)
             const response = await fetch(`http://localhost:3001/time-report/all-users`, {
                 credentials: 'include',
             });
@@ -36,8 +38,9 @@ export const AllUsersReportView = () => {
 
     return (
         <>
-            <h1 className={styles.headerOne}>AllUsersReportView</h1>
-            <p>{loadingData[2].taskDescription}</p>
+            <h1 className={styles.headerOne}>AllUsersReportView</h1>s
+            <AllTasksTable allTasksList = {loadingData}
+            />
         </>
     )
 
