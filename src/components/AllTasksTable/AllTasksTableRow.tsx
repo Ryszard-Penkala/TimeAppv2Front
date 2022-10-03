@@ -1,4 +1,5 @@
 import { TimeReportInterface } from "types";
+import styles from "./AllTasksTableRow.module.scss"
 
 interface Props {
     task: TimeReportInterface;
@@ -6,7 +7,7 @@ interface Props {
 
 export const AllTasksTableRow = (props: Props) => {
     return (
-        <tr>
+        <tr className={styles.tableRow}>
             <th>{props.task.id}</th>
             <td>{props.task.daysOfEffort}</td>
             <td>{props.task.minutesOfEffort}</td>

@@ -37,11 +37,10 @@ export const AllUsersReportView = () => {
 
 
     return (
-        <>
-            <h1 className={styles.headerOne}>AllUsersReportView</h1>s
-            <AllTasksTable allTasksList = {loadingData}
-            />
-        </>
+        <div className={styles.allUsersReportSection}>
+            <h1 className={styles.headerOne}>AllUsersReportView</h1>
+            <AllTasksTable allTasksList = {loadingData}/>
+        </div>
     )
 
 }

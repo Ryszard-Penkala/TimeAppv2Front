@@ -1,3 +1,4 @@
+import styles from "./AllTasksTable.module.scss"
 import {getAllUsersReportResponse } from "types"
 import { AllTasksTableRow } from "./AllTasksTableRow";
 
@@ -8,15 +9,15 @@ interface Props {
 export const AllTasksTable = (props: Props) => {
 
     return  (
-        <table>
+        <table className={styles.allUserTable}>
             <thead>
             <tr>
                 <th>Id</th>
                 <th>Days of Effort</th>
                 <th>Minutes of Effort</th>
-                <th>task Description</th>
-                <th>started At</th>
-                <th>affected User Id</th>
+                <th>Task Description</th>
+                <th>Started At</th>
+                <th>Affected User Id</th>
             </tr>
             </thead>
             <tbody>
