@@ -6,24 +6,38 @@ import {Button} from "../../components/Button/Button";
 
 export const TimeReportTabView = () => {
 
-    const [loadingData, setLoadingData] = useState< getAllUsersReportResponse | null>(null)
+    const [loadingData, setLoadingData] = useState< getAllUsersReportResponse | null>(null);
+    const [userId, setUserId] = useState< string | null>(null);
 
-    const fetchData = async () => {
+
+    const fetchLoadingData = async () => {
         setLoadingData(null);
+        setUserId(null);
+
         const response = await fetch(`http://localhost:3001/time-registration`,{
             credentials: 'include',
         });
-        const data = await response.json()
+        const data = await response.json();
         await setLoadingData(data.statusCode);
     }
 
+    const fetchUserData = async () => {
+        const userIdResponse = await fetch(`http://localhost:3001/time-report`,{
+            credentials: 'include',
+        });
+        const dataUserId = await userIdResponse.json()
+        await setUserId(dataUserId);
+    }
+
     useEffect(()=> {
-        fetchData()
+        fetchLoadingData()
+            .catch(console.error);
+        fetchUserData()
             .catch(console.error);
     }, []);
 
 
-    if(loadingData === null) {
+    if(loadingData === null ) {
         return <Spinner/>
     }
 
@@ -43,7 +57,7 @@ export const TimeReportTabView = () => {
                     Please choose which report would you like to see
                 </p>
                 <div className={styles.mainSectionButtons}>
-                    <Button children = "Current User Report" link="/#"/>
+                    <Button children = "Current User Report" link={`./time-report/${userId}`}/>
                     <Button children = "All User Report" link="./all-users-report" />
                 </div>
             </section>
