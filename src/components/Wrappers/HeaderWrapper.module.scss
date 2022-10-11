@@ -15,10 +15,23 @@
   flex-direction: row;
   justify-self: flex-start;
   padding: 0 15px;
+  .navigationLink {
+    margin: 0 15px 0 15px;
+    text-decoration: none;
+    color: var(--color-tertiary);
+    font-weight: 300;
+  }
+  .navigationLinkActive{
+    margin: 0 15px 0 15px;
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-weight: 700;
+    }
+  }
   button{
     margin: 0 15px;
   }
-}
+
 
 .navigationTitle{
   font-weight: bold;
