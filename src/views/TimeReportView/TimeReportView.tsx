@@ -46,7 +46,7 @@ export const TimeReportView = () => {
                     Choose which action you would like to take
                 </p>
                 <div className={styles.mainSectionButtons}>
-                    <Button children = "Time Registration Tab" link="/#"/>
+                    <Button children = "Time Registration Tab" link="/time-registration-tab"/>
                     <Button children = "Time Report Tab" link="/time-report-tab" />
                 </div>
             </section>

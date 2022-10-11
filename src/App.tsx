@@ -10,6 +10,7 @@ import {TimeReportView} from "./views/TimeReportView/TimeReportView";
 import {TimeReportTabView} from "./views/TimeReportTabView/TimeReportTabView";
 import {AllUsersReportView} from "./views/AllUsersReportView/AllUsersReportView";
 import { CurrentUserReportView } from './views/CurrentUserReportView/CurrentUserReportView';
+import {TimeRegistrationTabView} from "./views/TimeRegistrationTab/TimeRegistrationTabView";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/time-report-tab/all-users-report" element={< AllUsersReportView />}/>
                     <Route path="/time-report-tab/time-report/:userId" element={< CurrentUserReportView />}/>
                     <Route path="/time-report-tab" element={< TimeReportTabView />}/>
+                    <Route path="/time-registration-tab" element={< TimeRegistrationTabView />}/>
                     <Route path="*" element={<NotFoundView/>}/>
                 </Routes>
             </div>
