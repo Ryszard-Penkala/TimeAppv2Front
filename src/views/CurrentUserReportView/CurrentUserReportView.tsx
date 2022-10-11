@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Spinner} from "../../common/Spinner/Spinner";
-import styles from "CurrentUserReportView.module.scss";
+import styles from "./CurrentUserReportView.module.scss";
 import { getAllUsersReportResponse } from "types";
 import {AllTasksTable} from "../../components/AllTasksTable/AllTasksTable";
 
@@ -19,7 +19,6 @@ export const CurrentUserReportView = () => {
                 credentials: 'include',
             });
             const json = await response.json()
-            console.log(json);
             setLoadingData(json);
         }
 
@@ -40,12 +39,9 @@ export const CurrentUserReportView = () => {
 
 
     return (
-        // <div className={styles.allUsersReportSection}>
-        //     <h1 className={styles.headerOne}>AllUsersReportView</h1>
-        //     <AllTasksTable allTasksList = {loadingData}/>
-        // </div>
 
-        <div>
+        <div className={styles.currentUsersReportSection}>
+            <h1 className={styles.headerOne}>User {userId} Report View </h1>
             <AllTasksTable allTasksList = {loadingData}/>
         </div>
     )

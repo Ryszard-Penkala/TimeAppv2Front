@@ -17,7 +17,6 @@ export const AllUsersReportView = () => {
                 credentials: 'include',
             });
             const json = await response.json()
-            console.log(json);
             setLoadingData(json);
         }
 
