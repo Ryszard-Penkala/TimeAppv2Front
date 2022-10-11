@@ -13,7 +13,7 @@ export const AllTasksTableRow = (props: Props) => {
             <td>{props.task.minutesOfEffort}</td>
             <td>{props.task.taskDescription}</td>
             <td>{String(props.task.startedAt)}</td>
-            <td>{props.task.userName}</td>
+            <td>{props.task.affectedUser.id}</td>
         </tr>
     )
 }

@@ -9,6 +9,7 @@ import {NotFoundView} from "./views/NotFoundView/NotFoundView";
 import {TimeReportView} from "./views/TimeReportView/TimeReportView";
 import {TimeReportTabView} from "./views/TimeReportTabView/TimeReportTabView";
 import {AllUsersReportView} from "./views/AllUsersReportView/AllUsersReportView";
+import { CurrentUserReportView } from './views/CurrentUserReportView/CurrentUserReportView';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/signin" element={<SignInView/>}/>
                     <Route path="/time-report" element={< TimeReportView />}/>
                     <Route path="/time-report-tab/all-users-report" element={< AllUsersReportView />}/>
+                    <Route path="/time-report-tab/time-report/:userId" element={< CurrentUserReportView />}/>
                     <Route path="/time-report-tab" element={< TimeReportTabView />}/>
                     <Route path="*" element={<NotFoundView/>}/>
                 </Routes>

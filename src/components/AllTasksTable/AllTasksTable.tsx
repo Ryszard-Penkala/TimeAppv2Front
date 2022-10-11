@@ -7,7 +7,6 @@ interface Props {
 }
 
 export const AllTasksTable = (props: Props) => {
-
     return  (
         <table className={styles.allUserTable}>
             <thead>
