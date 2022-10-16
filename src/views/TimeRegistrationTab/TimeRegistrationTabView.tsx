@@ -5,6 +5,7 @@ import { getAllUsersReportResponse } from 'types';
 
 export const TimeRegistrationTabView = () => {
 
+    const [taskDescription, setTaskDescription] = useState<string>('')
     const [loadingData, setLoadingData] = useState< getAllUsersReportResponse | null>(null);
     const [userId, setUserId] = useState< string | null>(null);
 
@@ -52,34 +53,41 @@ export const TimeRegistrationTabView = () => {
 
     };
 
+    const updateTaskDescription = (value: string) => {
+        setTaskDescription(String(value));
+    };
+
     return  (
         <>
-            <section className={styles.mainSectionGroup}>
-                <div className={styles.mainSectionHeader}>
-                    <h2>Welcome to the time registration TAB</h2>
+            <section className={styles.mainSection}>
+                <div className={styles.mainSectionGroup}>
+                    <div className={styles.mainSectionHeader}>
+                        <h2>Welcome to the time registration TAB</h2>
+                    </div>
+                    <p className={styles.mainSectionParagraph}>
+                        Please click 'Start task' to start counting time of your actual task. Remember to add task description.
+                    </p>
                 </div>
-                <p className={styles.mainSectionParagraph}>
-                    Please click 'Start task' to start counting time of your actual task. Remember to add task description.
-                </p>
                 <div className={styles.mainSectionForm}>
                     <form onSubmit={sendForm} className={styles.formContainer}>
                         <div className={styles.formTitle}>
                             Add description of your task.
                         </div>
                         <div className={styles.formGroup}>
-                            <label>
-                                Task description
-                                <input
-                                    type="text "
-                                    name='email'
+                            <label className={styles.formLabel}>
+                                <textarea
+                                    name='taskDescription'
                                     className={styles.formInput}
-                                    placeholder='Email'
-                                    // value={emailData.email}
-                                    // onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateEmailData("email" , e.target.value)}
+                                    placeholder='Task description...'
+                                    value={taskDescription}
+                                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateTaskDescription(e.target.value)}
                                 />
 
                             </label>
 
+                        </div>
+                        <div className={styles.formFooter}>
+                            <button type="submit">Start task</button>
                         </div>
                     </form>
                 </div>
