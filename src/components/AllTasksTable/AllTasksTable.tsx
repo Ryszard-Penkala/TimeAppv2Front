@@ -1,6 +1,6 @@
 import styles from "./AllTasksTable.module.scss"
 import {getAllUsersReportResponse } from "types"
-import { AllTasksTableRow } from "./AllTasksTableRow";
+import { AllTasksTableRow } from "../AllTasksTableRow/AllTasksTableRow";
 
 interface Props {
     allTasksList: getAllUsersReportResponse;

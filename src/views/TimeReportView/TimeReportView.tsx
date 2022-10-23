@@ -2,7 +2,7 @@ import styles from './TimeReportView.module.scss';
 import {useEffect, useState} from "react";
 import {getAllUsersReportResponse} from 'types'
 import {Spinner} from "../../common/Spinner/Spinner";
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../components/Buttons/Button/Button';
 
 export const TimeReportView = () => {
 

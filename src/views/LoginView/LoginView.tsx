@@ -1,6 +1,7 @@
 import React, {FormEvent, useState} from "react";
 import styles from './LoginView.module.scss';
 import {Link, useNavigate} from "react-router-dom";
+import {ActionButton} from "../../components/Buttons/ActionButton/ActionButton";
 
 
 export const LoginView = () => {
@@ -91,7 +92,7 @@ export const LoginView = () => {
                     Don’t have an account?
                     <Link to="/signin">Signin</Link>
                 </div>
-                <button type="submit">Log in</button>
+                <ActionButton buttonText="Log in"/>
             </div>
         </form>
     )

@@ -1,6 +1,7 @@
 import React, {FormEvent, useState} from "react";
 import styles from './SignInView.module.scss';
 import {Link} from "react-router-dom";
+import { ActionButton } from "../../components/Buttons/ActionButton/ActionButton";
 
 export const SignInView = () => {
     interface emailDataInterface {
@@ -99,7 +100,7 @@ export const SignInView = () => {
                             Account created?
                             <Link to="/login">Login</Link>
                         </div>
-                        <button type="submit">Sign in</button>
+                        <ActionButton buttonText="Sign in"/>
                     </div>
                 </form>
             }

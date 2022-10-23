@@ -2,6 +2,7 @@ import styles from './TimeRegistrationTabView.module.scss';
 import React, {FormEvent, useEffect, useState} from "react";
 import {Spinner} from "../../common/Spinner/Spinner";
 import { getAllUsersReportResponse } from 'types';
+import {ActionButton} from "../../components/Buttons/ActionButton/ActionButton";
 
 export const TimeRegistrationTabView = () => {
 
@@ -48,8 +49,11 @@ export const TimeRegistrationTabView = () => {
     }
 
     const sendForm = async (e: FormEvent) => {
-
         e.preventDefault();
+
+        try{
+
+        }
 
     };
 
@@ -87,7 +91,7 @@ export const TimeRegistrationTabView = () => {
 
                         </div>
                         <div className={styles.formFooter}>
-                            <button type="submit">Start task</button>
+                            <ActionButton buttonText="Start task"/>
                         </div>
                     </form>
                 </div>
